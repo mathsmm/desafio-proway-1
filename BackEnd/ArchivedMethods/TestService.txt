@@ -1,0 +1,29 @@
+using System.Linq;
+using System.Threading.Tasks;
+using EscolaAlf_API.Data.Interfaces;
+using EscolaAlf_API.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace EscolaAlf_API.Data.Services
+{
+    public class TestService : ITest
+    {
+        private readonly DataContext _context;
+        public TestService(DataContext context)
+        {
+            this._context = context;
+        }
+
+        public async Task<Test[]> GetAllAsync()
+        {
+            IQueryable<Test> query = _context.Test.AsNoTracking().OrderBy(sr => sr.Id);
+            return await query.ToArrayAsync();
+        }
+
+        public async Task<Test> GetByIdAsync(int testId)
+        {
+            IQueryable<Test> query = _context.Test.AsNoTracking().Where(sr => sr.Id == testId);
+            return await query.FirstOrDefaultAsync();
+        }
+    }
+}

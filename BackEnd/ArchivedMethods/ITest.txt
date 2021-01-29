@@ -1,0 +1,11 @@
+using System.Threading.Tasks;
+using EscolaAlf_API.Models;
+
+namespace EscolaAlf_API.Data.Interfaces
+{
+    public interface ITest
+    {
+        Task<Test[]> GetAllAsync();
+        Task<Test> GetByIdAsync(int testId);
+    }
+}

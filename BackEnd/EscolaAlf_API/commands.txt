@@ -1,0 +1,12 @@
+dotnet new webapi -n EscolaAlf_API
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet add package Microsoft.EntityFrameworkCore.Analyzers
+dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson --version 3.1.7
+dotnet tool install --global dotnet-ef
+dotnet ef migrations add InitialMigration
+dotnet ef database update
+dotnet build
+dotnet watch run

@@ -1,0 +1,46 @@
+        // public List<int> ReturnWeights(int testId)
+        // {
+        //     IQueryable<TestQuestion> query = _context.TestQuestion.AsNoTracking().OrderBy(tq => tq.QuestionNumber).Where(tq => tq.TestId == testId);
+        //     List<int> weightList = new List<int>();
+        //     weightList = query.Select(tq => tq.Weight).ToList();
+        //     foreach (var weight in query)
+        //     {
+        //         weightList.Add(Convert.ToInt32(weight.ToString()));
+        //     }
+        //     return weightList;
+        // }
+
+        // public List<int> ReturnZeroOneNumberList(int testId, int studentId)
+        // {
+        //     List<int> numberList = new List<int>();
+        //     var templateOptionsId = _iTemplate.ReturnTemplateOptionsId(testId);
+        //     var replyOptionsId = _iStudentReply.ReturnStudentReplyOptionsId(testId, studentId);
+        //     for (int i = 0; i < templateOptionsId.Count; i++)
+        //     {
+        //         if (replyOptionsId[i] == templateOptionsId[i])
+        //         {
+        //             numberList.Add(1);
+        //         }
+        //         else
+        //         {
+        //             numberList.Add(0);
+        //         }
+        //     }
+        //     return numberList;
+        // }
+
+        // public List<double> CalculateGradeOfAllStudentsByTest(int testId)
+        // {
+        //     List<int> studentIdList = _iStudentReply.ReturnStudentIdList(testId);
+        //     List<double> gradeList = new List<double>();
+        //     for (int i = 0; i < studentIdList.Count(); i++)
+        //     {
+        //         gradeList.Add(CalculateGradeOfOneStudent(testId, studentIdList[i]));
+        //     }
+        //     return gradeList;
+        // }
+
+        // public double CalculateGradeOfOneStudent(int testId, int studentId)
+        // {
+        //     return ReturnGrade(ReturnZeroOneNumberList(testId, studentId), _iTestQuestion.ReturnWeights(testId));
+        // }

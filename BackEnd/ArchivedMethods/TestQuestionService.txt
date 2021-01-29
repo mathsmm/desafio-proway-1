@@ -1,0 +1,22 @@
+        // public async Task<int[]> RetornarPesos(int testId, string connectionString)
+        // {
+        //     IEnumerable<TestQuestion> list = await GetByTestId(testId);
+        //     List<int> listaPesos = new List<int>();
+        //     string queryString = $"SELECT Weigth FROM TestQuestion WHERE TestId=@testId;";
+        //     using (SqlConnection connection = new SqlConnection(connectionString))
+        //     {
+        //         SqlCommand command = new SqlCommand(queryString, connection);
+        //         command.Parameters.AddWithValue("@testId", testId);
+        //         connection.Open();
+        //         using(SqlDataReader reader = command.ExecuteReader())
+        //         {
+        //             while (reader.Read())
+        //             {
+        //                 listaPesos.Add(Convert.ToInt32(reader["Weigth"].ToString()));
+        //             }
+        //         }
+        //         connection.Close();
+        //     }
+        //     int[] pesos = listaPesos.ToArray();
+        //     return pesos;
+        // }
