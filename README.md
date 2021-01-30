@@ -64,8 +64,8 @@
  - Microsoft.AspNetCore.Mvc.NewtonsoftJson --version 3.1.7
  - NUnit --version 3.12.0  
   
- Os pacotes do EntityFrameworkCore foram usados para desenvolver a API;
- O pacote NewtonsoftJson foi empregado para impedir ciclos incessantes ao receber respostas da API;
+ Os pacotes do EntityFrameworkCore foram usados para desenvolver a API;  
+ O pacote NewtonsoftJson foi empregado para impedir ciclos incessantes ao receber respostas da API;  
  O pacote NUnit foi utilizado para realizar testes unitários nas classes de cálculo de média ponderada e média aritmética.
 
 ## Comandos utilizados
