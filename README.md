@@ -43,7 +43,7 @@
 Este tópico tem a função de explicar como efetuar a comunicação com a API, através da apresentação dos Endpoints. Também há a demonstração dos recursos usados no código para efetuar as restrições citadas no desafio.
 Toda entrada e saída de dados é em JSON.
 ## Endpoints
-### Student
+### Student (Estudante)
 Obter todos os estudantes:
 ```
 "name": "Get",
@@ -54,7 +54,6 @@ Obter todos os estudantes:
     }
 }
 ```
-
 Obter o estudante pelo id:
 ```
 "name": "GetById",
@@ -65,7 +64,6 @@ Obter o estudante pelo id:
     }
 }
 ```
-
 Postar um estudante:
 ```
 "name": "Post",
@@ -80,7 +78,6 @@ Postar um estudante:
     }
 }
 ```
-
 Editar um estudante:
 ```
 "name": "Put",
@@ -95,7 +92,6 @@ Editar um estudante:
         "raw": "https://localhost:5001/Student/id=6"
     }
 ```
-
 Remover um estudante:
 ```
 "name": "Delete",
@@ -107,6 +103,7 @@ Remover um estudante:
     }
 ```
 ### Template
+Obter todos os gabaritos:
 ```
 "name": "Get",
 "request": {
@@ -116,6 +113,7 @@ Remover um estudante:
         "raw": "https://localhost:5001/Template"
     }
 ```
+Obter o gabarito pelo id:
 ```
 "name": "GetById",
 "request": {
@@ -125,6 +123,7 @@ Remover um estudante:
         "raw": "https://localhost:5001/Template/id=1"
     }
 ```
+Postar um gabarito:
 ```
 "name": "Post",
 "request": {
@@ -138,6 +137,7 @@ Remover um estudante:
         "raw": "https://localhost:5001/Template"
     }
 ```
+Editar um gabarito:
 ```
 "name": "Put",
 "request": {
@@ -151,6 +151,7 @@ Remover um estudante:
         "raw": "https://localhost:5001/Template/id=3"
     }
 ```
+Remover um gabarito:
 ```
 "name": "Delete",
 "request": {
@@ -160,4 +161,5 @@ Remover um estudante:
         "raw": "https://localhost:5001/Template/id=2"
     }
 ```
+### StudentReply
 
