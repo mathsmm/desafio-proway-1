@@ -41,19 +41,123 @@
 
 # Funcionamento da API
 Este tópico tem a função de explicar como efetuar a comunicação com a API, através da apresentação dos Endpoints. Também há a demonstração dos recursos usados no código para efetuar as restrições citadas no desafio.
+Toda entrada e saída de dados é em JSON.
 ## Endpoints
 ### Student
+Obter todos os estudantes:
 ```
-"method": "GET",
-"header": [],
-"url": {
-    "raw": "https://localhost:5001/Student",
-    "protocol": "https",
-    "host": [
-        "localhost"
-    ],
-    "port": "5001",
-    "path": [
-        "Student"
-    ]
+"name": "Get",
+"request": {
+    "method": "GET",
+    "url": {
+        "raw": "https://localhost:5001/Student"
+    }
 }
+```
+
+Obter o estudante pelo id:
+```
+"name": "GetById",
+"request": {
+    "method": "GET",
+    "url": {
+        "raw": "https://localhost:5001/Student/id=1"
+    }
+}
+```
+
+Postar um estudante:
+```
+"name": "Post",
+"request": {
+    "method": "POST",
+    "body": {
+        "mode": "raw",
+        "raw": "{\r\n    \"name\": \"Eduarda\",\r\n    \"birthdate\": \"2003-09-19T00:00:00\"\r\n}"
+    },
+    "url": {
+        "raw": "https://localhost:5001/Student/"
+    }
+}
+```
+
+Editar um estudante:
+```
+"name": "Put",
+"request": {
+    "method": "PUT",
+    "body": {
+        "mode": "raw",
+        "raw": "{\r\n    \"id\": 6,\r\n    \"name\": \"Eduardo\",\r\n    \"birthdate\": \"2003-09-19T00:00:00\"\r\n}"
+        }
+    },
+    "url": {
+        "raw": "https://localhost:5001/Student/id=6"
+    }
+```
+
+Remover um estudante:
+```
+"name": "Delete",
+"request": {
+    "method": "DELETE",
+    },
+    "url": {
+        "raw": "https://localhost:5001/Student/id=6"
+    }
+```
+### Template
+```
+"name": "Get",
+"request": {
+    "method": "GET"
+    },
+    "url": {
+        "raw": "https://localhost:5001/Template"
+    }
+```
+```
+"name": "GetById",
+"request": {
+    "method": "GET"
+    },
+    "url": {
+        "raw": "https://localhost:5001/Template/id=1"
+    }
+```
+```
+"name": "Post",
+"request": {
+    "method": "POST",
+    "body": {
+        "mode": "raw",
+        "raw": "{\r\n    \"testQuestionId\": 1,\r\n    \"optionId\": 1\r\n}"
+        }
+    },
+    "url": {
+        "raw": "https://localhost:5001/Template"
+    }
+```
+```
+"name": "Put",
+"request": {
+    "method": "PUT",
+    "body": {
+        "mode": "raw",
+        "raw": "{\r\n    \"id\": 3,\r\n    \"testQuestionId\": 5,\r\n    \"optionId\": 1\r\n}"
+        }
+    },
+    "url": {
+        "raw": "https://localhost:5001/Template/id=3"
+    }
+```
+```
+"name": "Delete",
+"request": {
+    "method": "DELETE"
+    },
+    "url": {
+        "raw": "https://localhost:5001/Template/id=2"
+    }
+```
+
