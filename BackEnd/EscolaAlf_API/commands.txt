@@ -10,3 +10,17 @@ dotnet ef migrations add InitialMigration
 dotnet ef database update
 dotnet build
 dotnet watch run
+
+UNIT TESTING:
+cd EscolaAlf_API
+dotnet add package NUnit --version 3.12.0
+
+dotnet new sln -n EscolaAlf_API
+dotnet sln EscolaAlf_API.sln add EscolaAlf_API.csproj
+cd ..
+cd UnitTesting
+dotnet new nunit -n Calculation.tests
+cd ..
+cd EscolaAlf_API
+dotnet sln EscolaAlf_API.sln add ../UnitTesting/Calculation.tests/Calculation.tests.csproj
+dotnet add ../UnitTesting/Calculation.tests/Calculation.tests.csproj reference EscolaAlf_API.csproj
