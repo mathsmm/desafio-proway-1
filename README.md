@@ -8,14 +8,14 @@
 ## Sumário
 * [Critérios](#Critérios)
 * [Como rodar a aplicação](#Como-rodar-a-aplicação)
-* [Exemplo das tabelas](#Exemplo-das-tabelas)
+* [Ideia das tabelas](#Ideia-das-tabelas)
 * [Funcionamento da API](#Funcionamento-da-API)
     * [Endpoints](#Endpoints)
         * [Student (Estudante)](#Student-Estudante)
-        * [Template (Gabarito)](#Template-(Gabarito))
-        * [StudentReply (Resposta)](#StudentReply-(Resposta))
-        * [StudentGrade (Nota)](#StudentGrade-(Nota))
-        * [StudentSituation (Situação)](#StudentSituation-(Situação))
+        * [Template (Gabarito)](#Template-Gabarito)
+        * [StudentReply (Resposta)](#StudentReply-Resposta)
+        * [StudentGrade (Nota)](#StudentGrade-Nota)
+        * [StudentSituation (Situação)](#StudentSituation-Situação)
 
 ## Critérios
  ### O Desafio
@@ -48,7 +48,7 @@
  dotnet watch run
  ```
 
-## Exemplo das tabelas
+## Ideia das tabelas
  ![](IMG/TablesExample.png)
 
 # Funcionamento da API
@@ -360,3 +360,19 @@ Remover uma situação:
         "raw": "https://localhost:5001/StudentSituation/id=1"
     }
 ```
+## Efetuação das restrições
+### - A nota total da prova é sempre maior que 0 e menor que 10.
+Nota: Decidi considerar que a nota é sempre maior ou igual a 0 e menor ou igual a 10.\\
+Diretório: `BackEnd/EscolaAlf_API/Models/StudentGrade.cs`\\
+Código:
+```
+[Range(0, 10, ErrorMessage = "Value for grade must be between 0 and 10.")]
+public double Grade { get; set; }
+```
+
+### - A quantidade máxima de alunos é 100.
+
+### - O peso de cada questão é sempre um inteiro maior que 0.
+
+### - Os alunos aprovados tem média de notas maior do que 7.
+Nota: Decidi considerar que a média é sempre maior ou igual a 7.
