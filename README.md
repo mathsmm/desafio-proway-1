@@ -10,13 +10,14 @@
 * [Como rodar a aplicação](#Como-rodar-a-aplicação)
 * [Ideia das tabelas](#Ideia-das-tabelas)
 * [Funcionamento da API](#Funcionamento-da-API)
+    * [Efetuação das restrições](#Efetuação-das-restrições)
     * [Endpoints](#Endpoints)
         * [Student (Estudante)](#Student-Estudante)
         * [Template (Gabarito)](#Template-Gabarito)
         * [StudentReply (Resposta)](#StudentReply-Resposta)
         * [StudentGrade (Nota)](#StudentGrade-Nota)
         * [StudentSituation (Situação)](#StudentSituation-Situação)
-    * [Efetuação das restrições](#Efetuação-das-restrições)
+
 
 ## Critérios
  ### O Desafio
@@ -59,9 +60,50 @@ Para poder cadastrar gabaritos e respostas é necessária a existência de inst�
 Para cadastrar um gabarito na tabela `Template` o usuário deverá escolher uma opção da tabela `Option`. Essa opção será a alternativa correta que o estudante deverá selecionar em uma questão para acertá-la;  
 Para cadastrar uma resposta na tabela `StudentReply` o usuário deverá ter instâncias da tabela `Student`. Essas instâncias representarão os estudantes da escola;  
 Para poder cadastrar notas na tabela `StudentGrade` é necessária a existência de instâncias das tabelas `Test`, `Student`, `Template` e `StudentReply`;  
-Para poder cadastrar situações na tabela `StudentSituation` é necessária a existência de instâncias das tabelas `Student` e `StudentGrade`;  
+Para poder cadastrar situações na tabela `StudentSituation` é necessária a existência de instâncias das tabelas `Student` e `StudentGrade`.  
   
 Toda entrada e saída de dados é em JSON.
+
+## Efetuação das restrições
+### - A nota total da prova é sempre maior que 0 e menor que 10.
+OBS: Decidi considerar que a nota é sempre maior ou igual a 0 e menor ou igual a 10.  
+Diretório: `BackEnd/EscolaAlf_API/Models/StudentGrade.cs`  
+Código:
+```
+[Range(0, 10, ErrorMessage = "Value for grade must be between 0 and 10.")]
+public double Grade { get; set; }
+```
+### - A quantidade máxima de alunos é 100.
+OBS: Condição adicionada dentro do método `[HttpPost]` do `StudentController.cs`.  
+Diretório: `BackEnd/EscolaAlf_API/Controllers/StudentController.cs`  
+```
+if (_iStudent.ReturnNumberOfStudents() >= 100)
+{
+    return BadRequest("The number of students must be less than 100!");
+}
+```
+### - O peso de cada questão é sempre um inteiro maior que 0.
+OBS: O valor de peso foi limitado a 1000.  
+Diretório: `BackEnd/EscolaAlf_API/Models/TestQuestion.cs`  
+```
+[Range(1, 1000, ErrorMessage = "Value for weight must be between 1 and 1000.")]
+public int Weight { get; set; }
+```
+### - Os alunos aprovados tem média de notas maior do que 7.
+OBS: Decidi considerar que os alunos aprovados têm média sempre maior ou igual a 7. A condição foi adicionada dentro do método `[HttpPost]` do `StudentSituationController.cs`.  
+Diretório: `BackEnd/EscolaAlf_API/Controllers/StudentSituationController.cs`  
+```
+if (average >= 7)
+{
+    StudentSituation studentSituation = new StudentSituation(0, studentId, average, true);
+    _repository.Add(studentSituation);
+    if (await this._repository.SaveChangesAsync() != true)
+    {
+        return BadRequest();
+    }
+    return Ok(studentSituation);
+}
+```
 
 ## Endpoints
 ### Student (Estudante)
@@ -369,44 +411,3 @@ Remover uma situação:
         "raw": "https://localhost:5001/StudentSituation/id=1"
     }
 ```
-## Efetuação das restrições
-### - A nota total da prova é sempre maior que 0 e menor que 10.
-OBS: Decidi considerar que a nota é sempre maior ou igual a 0 e menor ou igual a 10.  
-Diretório: `BackEnd/EscolaAlf_API/Models/StudentGrade.cs`  
-Código:
-```
-[Range(0, 10, ErrorMessage = "Value for grade must be between 0 and 10.")]
-public double Grade { get; set; }
-```
-### - A quantidade máxima de alunos é 100.
-OBS: Condição adicionada dentro do método `[HttpPost]` do `StudentController.cs`.  
-Diretório: `BackEnd/EscolaAlf_API/Controllers/StudentController.cs`  
-```
-if (_iStudent.ReturnNumberOfStudents() >= 100)
-{
-    return BadRequest("The number of students must be less than 100!");
-}
-```
-### - O peso de cada questão é sempre um inteiro maior que 0.
-OBS: O valor de peso foi limitado a 1000.  
-Diretório: `BackEnd/EscolaAlf_API/Models/TestQuestion.cs`  
-```
-[Range(1, 1000, ErrorMessage = "Value for weight must be between 1 and 1000.")]
-public int Weight { get; set; }
-```
-### - Os alunos aprovados tem média de notas maior do que 7.
-OBS: Decidi considerar que os alunos aprovados têm média sempre maior ou igual a 7. A condição foi adicionada dentro do método `[HttpPost]` do `StudentSituationController.cs`.  
-Diretório: `BackEnd/EscolaAlf_API/Controllers/StudentSituationController.cs`  
-```
-if (average >= 7)
-{
-    StudentSituation studentSituation = new StudentSituation(0, studentId, average, true);
-    _repository.Add(studentSituation);
-    if (await this._repository.SaveChangesAsync() != true)
-    {
-        return BadRequest();
-    }
-    return Ok(studentSituation);
-}
-```
-
