@@ -16,6 +16,7 @@
         * [StudentReply (Resposta)](#StudentReply-Resposta)
         * [StudentGrade (Nota)](#StudentGrade-Nota)
         * [StudentSituation (Situação)](#StudentSituation-Situação)
+    * [Efetuação das restrições](#Efetuação-das-restrições)
 
 ## Critérios
  ### O Desafio
@@ -362,7 +363,7 @@ Remover uma situação:
 ```
 ## Efetuação das restrições
 ### - A nota total da prova é sempre maior que 0 e menor que 10.
-Nota: Decidi considerar que a nota é sempre maior ou igual a 0 e menor ou igual a 10.  
+OBS: Decidi considerar que a nota é sempre maior ou igual a 0 e menor ou igual a 10.  
 Diretório: `BackEnd/EscolaAlf_API/Models/StudentGrade.cs`  
 Código:
 ```
@@ -370,7 +371,7 @@ Código:
 public double Grade { get; set; }
 ```
 ### - A quantidade máxima de alunos é 100.
-Nota: Condição adicionada dentro do método `[HttpPost]` do `StudentController.cs`.  
+OBS: Condição adicionada dentro do método `[HttpPost]` do `StudentController.cs`.  
 Diretório: `BackEnd/EscolaAlf_API/Controllers/StudentController.cs`  
 ```
 if (_iStudent.ReturnNumberOfStudents() >= 100)
@@ -379,14 +380,14 @@ if (_iStudent.ReturnNumberOfStudents() >= 100)
 }
 ```
 ### - O peso de cada questão é sempre um inteiro maior que 0.
-Nota: O valor de peso foi limitado a 1000  
+OBS: O valor de peso foi limitado a 1000  
 Diretório: `BackEnd/EscolaAlf_API/Models/TestQuestion.cs`  
 ```
 [Range(1, 1000, ErrorMessage = "Value for weight must be between 1 and 1000.")]
 public int Weight { get; set; }
 ```
 ### - Os alunos aprovados tem média de notas maior do que 7.
-Nota: Decidi considerar que os alunos aprovados têm média sempre maior ou igual a 7. A condição foi adicionada dentro do método `[HttpPost]` do `StudentSituationController.cs`.  
+OBS: Decidi considerar que os alunos aprovados têm média sempre maior ou igual a 7. A condição foi adicionada dentro do método `[HttpPost]` do `StudentSituationController.cs`.  
 Diretório: `BackEnd/EscolaAlf_API/Controllers/StudentSituationController.cs`  
 ```
 if (average >= 7)
