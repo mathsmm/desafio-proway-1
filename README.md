@@ -102,7 +102,7 @@ Remover um estudante:
         "raw": "https://localhost:5001/Student/id=6"
     }
 ```
-### Template
+### Template (Gabarito)
 Obter todos os gabaritos:
 ```
 "name": "Get",
@@ -161,5 +161,190 @@ Remover um gabarito:
         "raw": "https://localhost:5001/Template/id=2"
     }
 ```
-### StudentReply
-
+### StudentReply (Resposta)
+Obter todas as respostas:
+```
+"name": "Get",
+"request": {
+    "method": "GET"
+    },
+    "url": {
+        "raw": "https://localhost:5001/StudentReply"
+    }
+```
+Obter resposta pelo id:
+```
+"name": "GetById",
+"request": {
+    "method": "GET"
+    },
+    "url": {
+        "raw": "https://localhost:5001/StudentReply/id=43"
+    }
+```
+Postar uma resposta:
+```
+"name": "Post",
+"request": {
+    "method": "POST",
+    "body": {
+        "mode": "raw",
+        "raw": "{\r\n    \"studentId\": 2,\r\n    \"testQuestionId\": 1,\r\n    \"optionId\": 1\r\n}"
+        }
+    },
+    "url": {
+        "raw": "https://localhost:5001/StudentReply"
+    }
+```
+Editar uma resposta:
+```
+"name": "Put",
+"request": {
+    "method": "PUT",
+    "body": {
+        "mode": "raw",
+        "raw": "{\r\n    \"id\": 44,\r\n    \"studentId\": 1,\r\n    \"testQuestionId\": 2,\r\n    \"testQuestion\": null,\r\n    \"optionId\": 14\r\n}"
+        }
+    },
+    "url": {
+        "raw": "https://localhost:5001/StudentReply/id=44"
+    }
+```
+Remover uma resposta:
+```
+"name": "Delete",
+"request": {
+    "method": "DELETE",
+    "body": {
+        "mode": "raw",
+        "raw": "{\r\n    \"studentId\": 5,\r\n    \"testQuestionId\": 2,\r\n    \"optionId\": 12\r\n}"
+        }
+    },
+    "url": {
+        "raw": "https://localhost:5001/StudentReply/id=16"
+    }
+```
+### StudentGrade (Nota)
+Obter todas as notas:
+```
+"name": "Get",
+"request": {
+    "method": "GET"
+        }
+    "url": {
+        "raw": "https://localhost:5001/StudentGrade"
+    }
+```
+Obter as notas pelo id do estudante:
+```
+"name": "GetByStudentId",
+"request": {
+    "method": "GET"
+    },
+    "url": {
+        "raw": "https://localhost:5001/StudentGrade/studentid=2"
+    }
+```
+Calcular e postar as notas de um estudante.
+Este método utiliza um serviço de cálculo de notas no diretório `BackEnd/EscolaAlf_API/Data/Services/GradeCalculationService.cs`:
+```
+"name": "CalculateAndPostGrade",
+"request": {
+    "method": "POST",
+    "body": {
+        "mode": "raw",
+        "raw": "{\r\n    \"studentId\": 2,\r\n    \"testQuestionId\": 1,\r\n    \"optionId\": 1\r\n}"
+        }
+    },
+    "url": {
+        "raw": "https://localhost:5001/StudentGrade/calculategrade_testid=2&studentid=2"
+    }
+```
+Editar uma nota:
+```
+"name": "Put",
+"request": {
+    "method": "PUT",
+    "body": {
+        "mode": "raw",
+        "raw": "{\r\n    \"id\": 11,\r\n    \"testId\": 1,\r\n    \"studentId\": 1,\r\n    \"grade\": 1.0\r\n}"
+        }
+    },
+    "url": {
+        "raw": "https://localhost:5001/StudentGrade/id=11"
+    }
+```
+Remover uma nota:
+```
+"name": "Delete",
+"request": {
+    "method": "DELETE"
+    },
+    "url": {
+        "raw": "https://localhost:5001/StudentGrade/id=4"
+    }
+```
+### StudentSituation (Situação)
+Obter todas as situações:
+```
+"name": "Get",
+"request": {
+    "method": "GET"
+    },
+    "url": {
+        "raw": "https://localhost:5001/StudentSituation"
+    }
+```
+Obter os estudantes aprovados:
+```
+"name": "GetApproved",
+"request": {
+    "method": "GET"
+    },
+    "url": {
+        "raw": "https://localhost:5001/StudentSituation/approved"
+    }
+```
+Calcular e postar a situação de um estudante.
+Este método utiliza um serviço de cálculo de médias no diretório `BackEnd/EscolaAlf_API/Data/Services/AverageCalculationService.cs`:
+```
+"name": "CalculateAndPostAverage",
+"request": {
+    "method": "POST",
+    "body": {
+        "mode": "raw",
+        "raw": "{\r\n    \"studentId\": 1,\r\n    \"average\": 0,\r\n    \"approval\": false\r\n}"
+        }
+    },
+    "url": {
+        "raw": "https://localhost:5001/StudentSituation/calculateaverage_studentid=1"
+    }
+```
+Editar uma situação:
+```
+"name": "Put",
+"request": {
+    "method": "PUT",
+    "body": {
+        "mode": "raw",
+        "raw": "{\r\n    \"id\": 6,\r\n    \"studentId\": 1,\r\n    \"average\": 8.0,\r\n    \"approval\": true\r\n}"
+        }
+    },
+    "url": {
+        "raw": "https://localhost:5001/StudentSituation/id=6"
+    }
+```
+Remover uma situação:
+```
+"name": "Delete",
+"request": {
+    "method": "DELETE",
+    "body": {
+        "mode": "raw",
+        "raw": "{\r\n    \"studentId\": 1,\r\n    \"average\": 0,\r\n    \"approval\": false\r\n}"
+        }
+    },
+    "url": {
+        "raw": "https://localhost:5001/StudentSituation/id=1"
+    }
+```
