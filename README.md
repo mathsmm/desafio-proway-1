@@ -97,6 +97,7 @@
  cd EscolaAlf_API
  dotnet sln EscolaAlf_API.sln add ../UnitTesting/Calculation.tests/Calculation.tests.csproj
  dotnet add ../UnitTesting/Calculation.tests/Calculation.tests.csproj reference EscolaAlf_API.csproj
+ dotnet test
  ```
 
 # Funcionamento da API
