@@ -8,6 +8,7 @@
 ## Sumário
 * [Critérios](#Critérios)
 * [Como rodar a aplicação](#Como-rodar-a-aplicação)
+* [Como rodar os testes unitários](#Como-rodar-os-testes-unitários)
 * [Ideia das tabelas](#Ideia-das-tabelas)
 * [Pacotes utilizados](#Pacotes-utilizados)
 * [Comandos utilizados](#Comandos-utilizados)
