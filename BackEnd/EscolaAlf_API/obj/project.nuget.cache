@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GgSVq0qZh7YQr+v027m+33CWosCX5LIRHa1cFU+wxcAJ2kU6XI6zfO6O/TXyVj4ghqseqavbhgmx9QjE4iFiuA==",
+  "dgSpecHash": "y7eyHXZxTFFfHeS/m6DHAENi1Qa+5IlRTnuJLp++68yJYB7PLUNm3c8KNoYjaWPv+OVuMj0b9bsDjDDbOUQMlg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\matmm\\Desktop\\Escola Alf\\BackEnd\\EscolaAlf_API\\EscolaAlf_API.csproj",
+  "projectFilePath": "C:\\Users\\matmm\\Desktop\\DESAFIO_Escola-ALF\\BackEnd\\EscolaAlf_API\\EscolaAlf_API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\matmm\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\matmm\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.7\\microsoft.aspnetcore.jsonpatch.3.1.7.nupkg.sha512",

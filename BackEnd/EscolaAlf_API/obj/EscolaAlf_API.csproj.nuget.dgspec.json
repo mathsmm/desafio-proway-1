@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\matmm\\Desktop\\Escola Alf\\BackEnd\\EscolaAlf_API\\EscolaAlf_API.csproj": {}
+    "C:\\Users\\matmm\\Desktop\\DESAFIO_Escola-ALF\\BackEnd\\EscolaAlf_API\\EscolaAlf_API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\matmm\\Desktop\\Escola Alf\\BackEnd\\EscolaAlf_API\\EscolaAlf_API.csproj": {
+    "C:\\Users\\matmm\\Desktop\\DESAFIO_Escola-ALF\\BackEnd\\EscolaAlf_API\\EscolaAlf_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\matmm\\Desktop\\Escola Alf\\BackEnd\\EscolaAlf_API\\EscolaAlf_API.csproj",
+        "projectUniqueName": "C:\\Users\\matmm\\Desktop\\DESAFIO_Escola-ALF\\BackEnd\\EscolaAlf_API\\EscolaAlf_API.csproj",
         "projectName": "EscolaAlf_API",
-        "projectPath": "C:\\Users\\matmm\\Desktop\\Escola Alf\\BackEnd\\EscolaAlf_API\\EscolaAlf_API.csproj",
+        "projectPath": "C:\\Users\\matmm\\Desktop\\DESAFIO_Escola-ALF\\BackEnd\\EscolaAlf_API\\EscolaAlf_API.csproj",
         "packagesPath": "C:\\Users\\matmm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\matmm\\Desktop\\Escola Alf\\BackEnd\\EscolaAlf_API\\obj\\",
+        "outputPath": "C:\\Users\\matmm\\Desktop\\DESAFIO_Escola-ALF\\BackEnd\\EscolaAlf_API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\matmm\\AppData\\Roaming\\NuGet\\NuGet.Config",
