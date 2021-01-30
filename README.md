@@ -11,11 +11,11 @@
 * [Exemplo das tabelas](#Exemplo-das-tabelas)
 * [Funcionamento da API](#Funcionamento-da-API)
     * [Endpoints](#Endpoints)
-            * [Student (Estudante)](#Student-(Estudante))
-            * [Template (Gabarito)](#Template-(Gabarito))
-            * [StudentReply (Resposta)](#StudentReply-(Resposta))
-            * [StudentGrade (Nota)](#StudentGrade-(Nota))
-            * [StudentSituation (Situação)](#StudentSituation-(Situação))
+        * [Student (Estudante)](#Student-Estudante)
+        * [Template (Gabarito)](#Template-(Gabarito))
+        * [StudentReply (Resposta)](#StudentReply-(Resposta))
+        * [StudentGrade (Nota)](#StudentGrade-(Nota))
+        * [StudentSituation (Situação)](#StudentSituation-(Situação))
 
 ## Critérios
  ### O Desafio
