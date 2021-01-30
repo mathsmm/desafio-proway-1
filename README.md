@@ -362,17 +362,42 @@ Remover uma situação:
 ```
 ## Efetuação das restrições
 ### - A nota total da prova é sempre maior que 0 e menor que 10.
-Nota: Decidi considerar que a nota é sempre maior ou igual a 0 e menor ou igual a 10.\\
-Diretório: `BackEnd/EscolaAlf_API/Models/StudentGrade.cs`\\
+Nota: Decidi considerar que a nota é sempre maior ou igual a 0 e menor ou igual a 10.  
+Diretório: `BackEnd/EscolaAlf_API/Models/StudentGrade.cs`  
 Código:
 ```
 [Range(0, 10, ErrorMessage = "Value for grade must be between 0 and 10.")]
 public double Grade { get; set; }
 ```
-
 ### - A quantidade máxima de alunos é 100.
-
+Nota: Condição adicionada dentro do método `[HttpPost]` do `StudentController.cs`.  
+Diretório: `BackEnd/EscolaAlf_API/Controllers/StudentController.cs`  
+```
+if (_iStudent.ReturnNumberOfStudents() >= 100)
+{
+    return BadRequest("The number of students must be less than 100!");
+}
+```
 ### - O peso de cada questão é sempre um inteiro maior que 0.
-
+Nota: O valor de peso foi limitado a 1000  
+Diretório: `BackEnd/EscolaAlf_API/Models/TestQuestion.cs`  
+```
+[Range(1, 1000, ErrorMessage = "Value for weight must be between 1 and 1000.")]
+public int Weight { get; set; }
+```
 ### - Os alunos aprovados tem média de notas maior do que 7.
-Nota: Decidi considerar que a média é sempre maior ou igual a 7.
+Nota: Decidi considerar que os alunos aprovados têm média sempre maior ou igual a 7. A condição foi adicionada dentro do método `[HttpPost]` do `StudentSituationController.cs`.  
+Diretório: `BackEnd/EscolaAlf_API/Controllers/StudentSituationController.cs`  
+```
+if (average >= 7)
+{
+    StudentSituation studentSituation = new StudentSituation(0, studentId, average, true);
+    _repository.Add(studentSituation);
+    if (await this._repository.SaveChangesAsync() != true)
+    {
+        return BadRequest();
+    }
+    return Ok(studentSituation);
+}
+```
+
