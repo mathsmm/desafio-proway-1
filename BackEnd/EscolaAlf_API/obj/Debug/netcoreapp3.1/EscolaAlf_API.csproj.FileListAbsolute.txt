@@ -130,3 +130,4 @@ C:\Users\matmm\Desktop\DESAFIO_Escola-ALF\BackEnd\EscolaAlf_API\obj\Debug\netcor
 C:\Users\matmm\Desktop\DESAFIO_Escola-ALF\BackEnd\EscolaAlf_API\obj\Debug\netcoreapp3.1\EscolaAlf_API.dll
 C:\Users\matmm\Desktop\DESAFIO_Escola-ALF\BackEnd\EscolaAlf_API\obj\Debug\netcoreapp3.1\EscolaAlf_API.pdb
 C:\Users\matmm\Desktop\DESAFIO_Escola-ALF\BackEnd\EscolaAlf_API\obj\Debug\netcoreapp3.1\EscolaAlf_API.genruntimeconfig.cache
+C:\Users\matmm\Desktop\DESAFIO_Escola-ALF\BackEnd\EscolaAlf_API\bin\Debug\netcoreapp3.1\nunit.framework.dll
