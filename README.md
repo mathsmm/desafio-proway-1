@@ -55,11 +55,11 @@
 # Funcionamento da API
 Este tópico tem a função de explicar como efetuar a comunicação com a API, através da apresentação dos Endpoints. Também há a demonstração dos recursos usados no código para efetuar as restrições citadas no desafio.  
   
-Para poder cadastrar gabaritos e respostas, é necessária a existência de instâncias da tabela `TestQuestion` que realizam a relação entre a tabela `Test` e a tabela `Question`. A partir dessa tabela, o usuário poderá escolher quantas e quais questões uma prova terá e qual será a ordem delas.  
-Ademais, para cadastrar um gabarito na tabela `Template` o usuário deverá escolher uma opção da tabela `Option`. Essa opção será a alternativa correta que o estudante deverá selecionar em uma questão para acertá-la;  
-Além disso, para cadastrar uma resposta na tabela `StudentReply` o usuário deverá ter instâncias da tabela `Student`. Essas instâncias representarão os estudantes da escola;  
-Outrossim, para poder cadastrar notas na tabela `StudentGrade` é necessária a existência de instâncias das tabelas `Test`, `Student`, `Template` e `StudentReply`;  
-Não obstante, para poder cadastrar situações na tabela `StudentSituation` é necessária a existência de instâncias das tabelas `Student` e `StudentGrade`;
+Para poder cadastrar gabaritos e respostas é necessária a existência de instâncias da tabela `TestQuestion` que realizam a relação entre a tabela `Test` e a tabela `Question`. A partir dessa tabela, o usuário poderá escolher quantas e quais questões uma prova terá e qual será a ordem delas;  
+Para cadastrar um gabarito na tabela `Template` o usuário deverá escolher uma opção da tabela `Option`. Essa opção será a alternativa correta que o estudante deverá selecionar em uma questão para acertá-la;  
+Para cadastrar uma resposta na tabela `StudentReply` o usuário deverá ter instâncias da tabela `Student`. Essas instâncias representarão os estudantes da escola;  
+Para poder cadastrar notas na tabela `StudentGrade` é necessária a existência de instâncias das tabelas `Test`, `Student`, `Template` e `StudentReply`;  
+Para poder cadastrar situações na tabela `StudentSituation` é necessária a existência de instâncias das tabelas `Student` e `StudentGrade`;  
   
 Toda entrada e saída de dados é em JSON.
 
