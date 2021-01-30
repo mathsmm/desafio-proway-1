@@ -52,6 +52,12 @@
  dotnet watch run
  ```
 
+## Como rodar os testes unitários
+ Para desempenhar os testes unitários no diretório `BackEnd/UnitTesting/Calculation.tests` através do Visual Studio Code, basta abrir o Terminal com a combinação de teclas `Ctrl + Shift + '` ou `Ctrl + '`, selecionar a pasta do diretório com o comando `cd` e a tecla `TAB` e digitar o seguinte comando:
+ ```
+ dotnet test
+ ```
+
 ## Ideia das tabelas
  ![](IMG/TablesExample.png)
 
