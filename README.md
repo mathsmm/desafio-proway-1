@@ -379,7 +379,7 @@ Obter todas as situações:
         "raw": "https://localhost:5001/StudentSituation"
     }
 ```
-Obter as situações pelo id do estudante:
+Obter situações pelo id do estudante:
 ```
 "name": "GetByStudentId",
 "request": {
