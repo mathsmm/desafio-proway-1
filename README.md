@@ -67,7 +67,9 @@ Toda entrada e saída de dados é em JSON.
 ## Efetuação das restrições
 ### - A nota total da prova é sempre maior que 0 e menor que 10.
 OBS: Decidi considerar que a nota é sempre maior ou igual a 0 e menor ou igual a 10.  
+  
 Diretório: `BackEnd/EscolaAlf_API/Models/StudentGrade.cs`  
+  
 Código:
 ```
 [Range(0, 10, ErrorMessage = "Value for grade must be between 0 and 10.")]
@@ -75,7 +77,10 @@ public double Grade { get; set; }
 ```
 ### - A quantidade máxima de alunos é 100.
 OBS: Condição adicionada dentro do método `[HttpPost]` do `StudentController.cs`.  
+  
 Diretório: `BackEnd/EscolaAlf_API/Controllers/StudentController.cs`  
+  
+Código:
 ```
 if (_iStudent.ReturnNumberOfStudents() >= 100)
 {
@@ -84,14 +89,20 @@ if (_iStudent.ReturnNumberOfStudents() >= 100)
 ```
 ### - O peso de cada questão é sempre um inteiro maior que 0.
 OBS: O valor de peso foi limitado a 1000.  
+  
 Diretório: `BackEnd/EscolaAlf_API/Models/TestQuestion.cs`  
+  
+Código:
 ```
 [Range(1, 1000, ErrorMessage = "Value for weight must be between 1 and 1000.")]
 public int Weight { get; set; }
 ```
 ### - Os alunos aprovados tem média de notas maior do que 7.
 OBS: Decidi considerar que os alunos aprovados têm média sempre maior ou igual a 7. A condição foi adicionada dentro do método `[HttpPost]` do `StudentSituationController.cs`.  
+  
 Diretório: `BackEnd/EscolaAlf_API/Controllers/StudentSituationController.cs`  
+  
+Código:
 ```
 if (average >= 7)
 {
