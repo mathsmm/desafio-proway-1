@@ -69,6 +69,38 @@
 			"response": []
 		},
 		{
+			"name": "GetByStudentId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/StudentReply/studentid=2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"StudentReply",
+						"studentid=2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Post",
 			"request": {
 				"method": "POST",
