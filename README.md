@@ -54,7 +54,7 @@
  ![](IMG/TablesExample.png)
 
 # Funcionamento da API
-Este tópico tem a função de explicar como efetuar a comunicação com a API, através da apresentação dos Endpoints. Também há a demonstração dos recursos usados no código para efetuar as restrições citadas no desafio.  
+Este tópico tem a função de explicar como efetuar a comunicação com a API através da apresentação dos Endpoints. Também há a demonstração dos recursos usados no código para efetuar as restrições citadas no desafio.  
   
 Para poder cadastrar gabaritos e respostas é necessária a existência de instâncias da tabela `TestQuestion` que realizam a relação entre a tabela `Test` e a tabela `Question`. A partir dessa tabela, o usuário poderá escolher quantas e quais questões uma prova terá e qual será a ordem delas;  
 Para cadastrar um gabarito na tabela `Template` o usuário deverá escolher uma opção da tabela `Option`. Essa opção será a alternativa correta que o estudante deverá selecionar em uma questão para acertá-la;  
