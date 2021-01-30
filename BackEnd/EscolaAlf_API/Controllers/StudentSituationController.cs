@@ -34,7 +34,7 @@ namespace EscolaAlf_API.Controllers
             }
         }
 
-        [HttpGet("id={studentId}")]
+        [HttpGet("studentid={studentId}")]
         public async Task<IActionResult> GetByStudentId(int studentId)
         {
             try
