@@ -256,6 +256,16 @@ Obter resposta pelo id:
         "raw": "https://localhost:5001/StudentReply/id=43"
     }
 ```
+Obter respostas pelo id do estudante:
+```
+"name": "GetByStudentId",
+"request": {
+    "method": "GET"
+    },
+    "url": {
+        "raw": "https://localhost:5001/StudentReply/studentid=2"
+    }
+```
 Postar uma resposta:
 ```
 "name": "Post",
@@ -367,6 +377,16 @@ Obter todas as situações:
     },
     "url": {
         "raw": "https://localhost:5001/StudentSituation"
+    }
+```
+Obter as situações pelo id do estudante:
+```
+"name": "GetByStudentId",
+"request": {
+    "method": "GET"
+        }
+    "url": {
+        "raw": "https://localhost:5001/StudentSituation/studentid=2"
     }
 ```
 Obter os estudantes aprovados:
