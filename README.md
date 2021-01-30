@@ -330,7 +330,7 @@ Obter as notas pelo id do estudante:
     }
 ```
 Calcular e postar as notas de um estudante.
-Este método utiliza um serviço de cálculo de notas no diretório `BackEnd/EscolaAlf_API/Data/Services/GradeCalculationService.cs`:
+Este método utiliza um serviço de cálculo de notas do diretório `BackEnd/EscolaAlf_API/Data/Services/GradeCalculationService.cs`:
 ```
 "name": "CalculateAndPostGrade",
 "request": {
@@ -400,7 +400,7 @@ Obter os estudantes aprovados:
     }
 ```
 Calcular e postar a situação de um estudante.
-Este método utiliza um serviço de cálculo de médias no diretório `BackEnd/EscolaAlf_API/Data/Services/AverageCalculationService.cs`:
+Este método utiliza um serviço de cálculo de médias do diretório `BackEnd/EscolaAlf_API/Data/Services/AverageCalculationService.cs`:
 ```
 "name": "CalculateAndPostAverage",
 "request": {
