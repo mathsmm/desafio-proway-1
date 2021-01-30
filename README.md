@@ -39,4 +39,21 @@
 ## Exemplo das tabelas
  ![](IMG/TablesExample.png)
 
-## Funcionamento da API
+# Funcionamento da API
+Este tópico tem a função de explicar como efetuar a comunicação com a API, através da apresentação dos Endpoints. Também há a demonstração dos recursos usados no código para efetuar as restrições citadas no desafio.
+## Endpoints
+### Student
+```
+"method": "GET",
+"header": [],
+"url": {
+	"raw": "https://localhost:5001/Student",
+	"protocol": "https",
+	"host": [
+		"localhost"
+	],
+	"port": "5001",
+	"path": [
+		"Student"
+	]
+}
