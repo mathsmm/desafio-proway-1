@@ -9,6 +9,8 @@
 * [Critérios](#Critérios)
 * [Como rodar a aplicação](#Como-rodar-a-aplicação)
 * [Ideia das tabelas](#Ideia-das-tabelas)
+* [Pacotes utilizados](#Pacotes-utilizados)
+* [Comandos utilizados](#Comandos-utilizados)
 * [Funcionamento da API](#Funcionamento-da-API)
     * [Efetuação das restrições](#Efetuação-das-restrições)
     * [Endpoints](#Endpoints)
@@ -53,6 +55,48 @@
 ## Ideia das tabelas
  ![](IMG/TablesExample.png)
 
+## Pacotes utilizados
+ - Microsoft.EntityFrameworkCore
+ - Microsoft.EntityFrameworkCore.SqlServer
+ - Microsoft.EntityFrameworkCore.Design
+ - Microsoft.EntityFrameworkCore.Tools
+ - Microsoft.EntityFrameworkCore.Analyzers
+ - Microsoft.AspNetCore.Mvc.NewtonsoftJson --version 3.1.7
+ - NUnit --version 3.12.0  
+  
+ O pacote NewtonsoftJson foi usado para impedir ciclos incessantes ao receber respostas da API.
+
+## Comandos utilizados
+ Todos os comandos usados para desenvolver a API:
+ ```
+ dotnet new webapi -n EscolaAlf_API
+ cd EscolaAlf_API
+ dotnet add package Microsoft.EntityFrameworkCore
+ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+ dotnet add package Microsoft.EntityFrameworkCore.Design
+ dotnet add package Microsoft.EntityFrameworkCore.Tools
+ dotnet add package Microsoft.EntityFrameworkCore.Analyzers
+ dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson --version 3.1.7
+ dotnet tool install --global dotnet-ef
+ dotnet ef migrations add InitialMigration
+ dotnet ef database update
+ dotnet build
+ dotnet watch run 
+
+ UNIT TESTING:
+ cd EscolaAlf_API
+ dotnet add package NUnit --version 3.12.0
+ dotnet new sln -n EscolaAlf_API
+ dotnet sln EscolaAlf_API.sln add EscolaAlf_API.csproj
+ cd ..
+ cd UnitTesting
+ dotnet new nunit -n Calculation.tests
+ cd ..
+ cd EscolaAlf_API
+ dotnet sln EscolaAlf_API.sln add ../UnitTesting/Calculation.tests/Calculation.tests.csproj
+ dotnet add ../UnitTesting/Calculation.tests/Calculation.tests.csproj reference EscolaAlf_API.csproj
+ ```
+
 # Funcionamento da API
 Este tópico tem a função de explicar como efetuar a comunicação com a API através da apresentação dos Endpoints. Também há a demonstração dos recursos usados no código para efetuar as restrições citadas no desafio.  
   
@@ -61,6 +105,8 @@ Para cadastrar um gabarito na tabela `Template` o usuário deverá escolher uma 
 Para cadastrar uma resposta na tabela `StudentReply` o usuário deverá ter instâncias da tabela `Student`. Essas instâncias representarão os estudantes da escola;  
 Para poder cadastrar notas na tabela `StudentGrade` é necessária a existência de instâncias das tabelas `Test`, `Student`, `Template` e `StudentReply`;  
 Para poder cadastrar situações na tabela `StudentSituation` é necessária a existência de instâncias das tabelas `Student` e `StudentGrade`.  
+  
+Há instâncias padrões na classe contexto: `BackEnd/EscolaAlf_API/Data/DataContext.cs`  
   
 Toda entrada e saída de dados é em JSON.
 
