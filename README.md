@@ -5,6 +5,18 @@
  Para a disponibilização dos dados foi utilizado o Framework ASP.NET Core.
  Para criar as requisições foi utilizada a ferramenta Postman, que tem como objetivo testar serviços de WEB APIs por meio do envio de requisições HTTP, sendo possível avaliar as respostas das requisições. 
 
+## Sumário
+* [Critérios](#Critérios)
+* [Como rodar a aplicação](#Como-rodar-a-aplicação)
+* [Exemplo das tabelas](#Exemplo-das-tabelas)
+* [Funcionamento da API](#Funcionamento-da-API)
+    * [Endpoints](#Endpoints)
+        * [Student (Estudante)](#Student-(Estudante))
+        * [Template (Gabarito)](#Template-(Gabarito))
+        * [StudentReply (Resposta)](#StudentReply-(Resposta))
+        * [StudentGrade (Nota)](#StudentGrade-(Nota))
+        * [StudentSituation (Situação)](#StudentSituation-(Situação))
+
 ## Critérios
  ### O Desafio
 
