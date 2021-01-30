@@ -47,13 +47,13 @@ Este tópico tem a função de explicar como efetuar a comunicação com a API, 
 "method": "GET",
 "header": [],
 "url": {
-	"raw": "https://localhost:5001/Student",
-	"protocol": "https",
-	"host": [
-		"localhost"
-	],
-	"port": "5001",
-	"path": [
-		"Student"
-	]
+    "raw": "https://localhost:5001/Student",
+    "protocol": "https",
+    "host": [
+        "localhost"
+    ],
+    "port": "5001",
+    "path": [
+        "Student"
+    ]
 }
