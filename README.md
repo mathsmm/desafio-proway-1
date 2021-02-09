@@ -132,7 +132,7 @@ OBS: Decidi considerar que a nota é sempre maior ou igual a 0 e menor ou igual 
 Diretório: `BackEnd/EscolaAlf_API/Models/StudentGrade.cs`  
   
 Código:
-```
+```c#
 [Range(0, 10, ErrorMessage = "Value for grade must be between 0 and 10.")]
 public double Grade { get; set; }
 ```
@@ -142,7 +142,7 @@ OBS: Condição adicionada dentro do método `[HttpPost]` do `StudentController.
 Diretório: `BackEnd/EscolaAlf_API/Controllers/StudentController.cs`  
   
 Código:
-```
+```c#
 if (_iStudent.ReturnNumberOfStudents() >= 100)
 {
     return BadRequest("The number of students must be less than 100!");
@@ -154,7 +154,7 @@ OBS: O valor de peso foi limitado a 1000.
 Diretório: `BackEnd/EscolaAlf_API/Models/TestQuestion.cs`  
   
 Código:
-```
+```c#
 [Range(1, 1000, ErrorMessage = "Value for weight must be between 1 and 1000.")]
 public int Weight { get; set; }
 ```
@@ -164,7 +164,7 @@ OBS: Decidi considerar que os alunos aprovados têm média sempre maior ou igual
 Diretório: `BackEnd/EscolaAlf_API/Controllers/StudentSituationController.cs`  
   
 Código:
-```
+```c#
 if (average >= 7)
 {
     StudentSituation studentSituation = new StudentSituation(0, studentId, average, true);
@@ -180,7 +180,7 @@ if (average >= 7)
 ## Endpoints
 ### Student (Estudante)
 Obter todos os estudantes:
-```
+```json
 "name": "Get",
 "request": {
     "method": "GET",
@@ -189,8 +189,9 @@ Obter todos os estudantes:
     }
 }
 ```
+
 Obter o estudante pelo id:
-```
+```json
 "name": "GetById",
 "request": {
     "method": "GET",
@@ -199,8 +200,9 @@ Obter o estudante pelo id:
     }
 }
 ```
+
 Postar um estudante:
-```
+```json
 "name": "Post",
 "request": {
     "method": "POST",
@@ -213,8 +215,9 @@ Postar um estudante:
     }
 }
 ```
+
 Editar um estudante:
-```
+```json
 "name": "Put",
 "request": {
     "method": "PUT",
@@ -227,8 +230,9 @@ Editar um estudante:
         "raw": "https://localhost:5001/Student/id=6"
     }
 ```
+
 Remover um estudante:
-```
+```json
 "name": "Delete",
 "request": {
     "method": "DELETE",
@@ -237,9 +241,10 @@ Remover um estudante:
         "raw": "https://localhost:5001/Student/id=6"
     }
 ```
+
 ### Template (Gabarito)
 Obter todos os gabaritos:
-```
+```json
 "name": "Get",
 "request": {
     "method": "GET"
@@ -248,8 +253,9 @@ Obter todos os gabaritos:
         "raw": "https://localhost:5001/Template"
     }
 ```
+
 Obter o gabarito pelo id:
-```
+```json
 "name": "GetById",
 "request": {
     "method": "GET"
@@ -258,8 +264,9 @@ Obter o gabarito pelo id:
         "raw": "https://localhost:5001/Template/id=1"
     }
 ```
+
 Postar um gabarito:
-```
+```json
 "name": "Post",
 "request": {
     "method": "POST",
@@ -272,8 +279,9 @@ Postar um gabarito:
         "raw": "https://localhost:5001/Template"
     }
 ```
+
 Editar um gabarito:
-```
+```json
 "name": "Put",
 "request": {
     "method": "PUT",
@@ -286,8 +294,9 @@ Editar um gabarito:
         "raw": "https://localhost:5001/Template/id=3"
     }
 ```
+
 Remover um gabarito:
-```
+```json
 "name": "Delete",
 "request": {
     "method": "DELETE"
@@ -296,9 +305,10 @@ Remover um gabarito:
         "raw": "https://localhost:5001/Template/id=2"
     }
 ```
+
 ### StudentReply (Resposta)
 Obter todas as respostas:
-```
+```json
 "name": "Get",
 "request": {
     "method": "GET"
@@ -307,8 +317,9 @@ Obter todas as respostas:
         "raw": "https://localhost:5001/StudentReply"
     }
 ```
+
 Obter resposta pelo id:
-```
+```json
 "name": "GetById",
 "request": {
     "method": "GET"
@@ -317,8 +328,9 @@ Obter resposta pelo id:
         "raw": "https://localhost:5001/StudentReply/id=43"
     }
 ```
+
 Obter respostas pelo id do estudante:
-```
+```json
 "name": "GetByStudentId",
 "request": {
     "method": "GET"
@@ -327,8 +339,9 @@ Obter respostas pelo id do estudante:
         "raw": "https://localhost:5001/StudentReply/studentid=2"
     }
 ```
+
 Postar uma resposta:
-```
+```json
 "name": "Post",
 "request": {
     "method": "POST",
@@ -341,8 +354,9 @@ Postar uma resposta:
         "raw": "https://localhost:5001/StudentReply"
     }
 ```
+
 Editar uma resposta:
-```
+```json
 "name": "Put",
 "request": {
     "method": "PUT",
@@ -355,23 +369,21 @@ Editar uma resposta:
         "raw": "https://localhost:5001/StudentReply/id=44"
     }
 ```
+
 Remover uma resposta:
-```
+```json
 "name": "Delete",
 "request": {
     "method": "DELETE",
-    "body": {
-        "mode": "raw",
-        "raw": "{\r\n    \"studentId\": 5,\r\n    \"testQuestionId\": 2,\r\n    \"optionId\": 12\r\n}"
-        }
     },
     "url": {
         "raw": "https://localhost:5001/StudentReply/id=16"
     }
 ```
+
 ### StudentGrade (Nota)
 Obter todas as notas:
-```
+```json
 "name": "Get",
 "request": {
     "method": "GET"
@@ -380,8 +392,9 @@ Obter todas as notas:
         "raw": "https://localhost:5001/StudentGrade"
     }
 ```
+
 Obter as notas pelo id do estudante:
-```
+```json
 "name": "GetByStudentId",
 "request": {
     "method": "GET"
@@ -390,9 +403,10 @@ Obter as notas pelo id do estudante:
         "raw": "https://localhost:5001/StudentGrade/studentid=2"
     }
 ```
+
 Calcular e postar as notas de um estudante.
 Este método utiliza um serviço de cálculo de notas do diretório `BackEnd/EscolaAlf_API/Data/Services/GradeCalculationService.cs`:
-```
+```json
 "name": "CalculateAndPostGrade",
 "request": {
     "method": "POST",
@@ -405,8 +419,9 @@ Este método utiliza um serviço de cálculo de notas do diretório `BackEnd/Esc
         "raw": "https://localhost:5001/StudentGrade/calculategrade_testid=2&studentid=2"
     }
 ```
+
 Editar uma nota:
-```
+```json
 "name": "Put",
 "request": {
     "method": "PUT",
@@ -419,8 +434,9 @@ Editar uma nota:
         "raw": "https://localhost:5001/StudentGrade/id=11"
     }
 ```
+
 Remover uma nota:
-```
+```json
 "name": "Delete",
 "request": {
     "method": "DELETE"
@@ -429,9 +445,10 @@ Remover uma nota:
         "raw": "https://localhost:5001/StudentGrade/id=4"
     }
 ```
+
 ### StudentSituation (Situação)
 Obter todas as situações:
-```
+```json
 "name": "Get",
 "request": {
     "method": "GET"
@@ -440,8 +457,9 @@ Obter todas as situações:
         "raw": "https://localhost:5001/StudentSituation"
     }
 ```
+
 Obter situações pelo id do estudante:
-```
+```json
 "name": "GetByStudentId",
 "request": {
     "method": "GET"
@@ -450,8 +468,9 @@ Obter situações pelo id do estudante:
         "raw": "https://localhost:5001/StudentSituation/studentid=2"
     }
 ```
+
 Obter os estudantes aprovados:
-```
+```json
 "name": "GetApproved",
 "request": {
     "method": "GET"
@@ -460,9 +479,10 @@ Obter os estudantes aprovados:
         "raw": "https://localhost:5001/StudentSituation/approved"
     }
 ```
+
 Calcular e postar a situação de um estudante.
 Este método utiliza um serviço de cálculo de médias do diretório `BackEnd/EscolaAlf_API/Data/Services/AverageCalculationService.cs`:
-```
+```json
 "name": "CalculateAndPostAverage",
 "request": {
     "method": "POST",
@@ -475,8 +495,9 @@ Este método utiliza um serviço de cálculo de médias do diretório `BackEnd/E
         "raw": "https://localhost:5001/StudentSituation/calculateaverage_studentid=1"
     }
 ```
+
 Editar uma situação:
-```
+```json
 "name": "Put",
 "request": {
     "method": "PUT",
@@ -489,15 +510,12 @@ Editar uma situação:
         "raw": "https://localhost:5001/StudentSituation/id=6"
     }
 ```
+
 Remover uma situação:
-```
+```json
 "name": "Delete",
 "request": {
     "method": "DELETE",
-    "body": {
-        "mode": "raw",
-        "raw": "{\r\n    \"studentId\": 1,\r\n    \"average\": 0,\r\n    \"approval\": false\r\n}"
-        }
     },
     "url": {
         "raw": "https://localhost:5001/StudentSituation/id=1"
