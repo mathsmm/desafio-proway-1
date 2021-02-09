@@ -91,8 +91,10 @@
  dotnet ef database update
  dotnet build
  dotnet watch run 
+```
 
- UNIT TESTING:
+### UNIT TESTING:
+```
  cd EscolaAlf_API
  dotnet add package NUnit --version 3.12.0
  dotnet new sln -n EscolaAlf_API
