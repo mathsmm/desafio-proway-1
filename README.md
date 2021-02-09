@@ -93,7 +93,7 @@
  dotnet watch run 
 ```
 
-### UNIT TESTING:
+### TESTES UNITÁRIOS:
 ```
  cd EscolaAlf_API
  dotnet add package NUnit --version 3.12.0
